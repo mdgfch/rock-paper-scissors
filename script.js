@@ -15,28 +15,25 @@ function computerPlay() {
 }
 
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
 function playRound(playerSelection, computerSelection) {
     switch (true) {
         case (playerSelection.toUpperCase() === computerSelection.toUpperCase()):
             return `You tied! You both picked ${computerSelection}!`;
-        case (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS"):
+        case (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS") ||
+        (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK") ||
+        (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER"):
             yourScore++;
-            return "You win! Rock beats Scissors!";
-        case (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER"):
+            return `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}!`;
+        case (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER") ||
+        (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS") ||
+        (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK"):
             computerScore++;
-            return "You lose! Paper beats Rock!";
-        case (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK"):
-            yourScore++;
-            return "You win! Paper beats Rock!";
-        case (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS"):
-            computerScore++;
-            return "You lose! Scissors beats Paper!";
-        case (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK"):
-            computerScore++;
-            return "You lose! Rock beats Scissors!";
-        case (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER"):
-            yourScore++;
-            return "You win! Scissors beats Paper!";
+            return `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
     }
 }
 
