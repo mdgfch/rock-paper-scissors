@@ -8,18 +8,4 @@ body {
     flex-direction: column;
 }
 
-.container {
-    background-color: rgba(0, 0, 138, 0.2);
-    border-radius: 8px;
-    border: 4px solid rgb(0, 0, 138);
-    padding: 32px;
-    display: flex;
-    flex-wrap: wrap; 
-}
 
-button {
-    border: 2px solid rgb(0, 0, 138);
-    border-radius: 8px;
-    padding: 4px;
-    margin: 12px;
-}
