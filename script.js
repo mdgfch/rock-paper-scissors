@@ -11,7 +11,6 @@ function computerPlay() {
     } else {
         computerSelection = "Scissors";
     }
-    return computerSelection;
 }
 
 
@@ -21,6 +20,7 @@ function capitalizeFirstLetter(string) {
 
 
 function playRound(playerSelection, computerSelection) {
+    computerPlay();
     switch (true) {
         case (playerSelection.toUpperCase() === computerSelection.toUpperCase()):
             return `You tied! You both picked ${computerSelection}!`;
@@ -34,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK"):
             computerScore++;
             return `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
-    }
+    } 
 }
 
 
@@ -45,7 +45,7 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));
         let score = `SCORE: ${yourScore}:${computerScore}`;
         console.log(score);
-    }
+}
     if (yourScore < computerScore) {
         console.log("You lost!")
     } else if (yourScore > computerScore) {
@@ -54,4 +54,13 @@ function game() {
         console.log("You tied!")
     }
 }
-game();
+
+document.getElementById('rockbtn').addEventListener('click', function(){console.log(playRound('rock', computerSelection))});
+document.getElementById('paperbtn').addEventListener('click', function(){console.log(playRound('paper', computerSelection))});
+document.getElementById('scissorsbtn').addEventListener('click', function(){console.log(playRound('scissors', computerSelection))});
+
+
+
+
+
+
