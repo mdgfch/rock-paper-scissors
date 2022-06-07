@@ -8,4 +8,21 @@ body {
     flex-direction: column;
 }
 
-
+.buttons {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    background-color: lightblue;
+    border-color: 3px solid darkblue;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 32px;
+    height: 120px;
+    width: 200px;
+    margin: 12px;
+}
